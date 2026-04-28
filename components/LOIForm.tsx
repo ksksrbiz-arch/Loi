@@ -58,6 +58,7 @@ type FormData = z.infer<typeof schema>;
 export default function LOIForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -89,7 +90,9 @@ export default function LOIForm() {
       });
 
       router.push("/thank-you");
-    } catch {
+    } catch (err) {
+      console.error("Form submission error:", err);
+      setSubmitError(true);
       setSubmitting(false);
     }
   };
@@ -238,6 +241,14 @@ export default function LOIForm() {
             placeholder="Anything else we should know about your operation or project…"
           />
         </div>
+
+        {/* Submit error */}
+        {submitError && (
+          <p className="text-red-500 text-sm text-center">
+            Something went wrong submitting your form. Please try again or call
+            us directly at (503) 000-0000.
+          </p>
+        )}
 
         {/* Submit */}
         <button
