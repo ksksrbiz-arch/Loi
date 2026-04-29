@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Thank You | Oregon Aerial Services",
   description:
-    "We received your Letter of Intent and will review your request before following up with next steps.",
+    "Your Letter of Intent has been received. We'll review it and follow up with next steps.",
 };
 
 export default function ThankYouPage() {

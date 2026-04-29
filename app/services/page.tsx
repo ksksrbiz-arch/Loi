@@ -74,7 +74,7 @@ const services = [
     imageAlt: "Beautiful aerial farm photography showcasing Oregon farmland",
     detail: [
       "High-resolution aerial photography gives you a bird&apos;s-eye view of your farm for records, marketing, or insurance documentation.",
-      "We capture high-resolution still images and video footage that showcase your operation with professional clarity.",
+      "We capture high-resolution still images and video footage for records, planning, insurance, and marketing needs.",
       "Photos are useful for monitoring crop progress, identifying problem areas, and building marketing materials for farm sales or agritourism.",
       "All imagery is delivered digitally with full resolution files and a web-optimized gallery link.",
     ],
