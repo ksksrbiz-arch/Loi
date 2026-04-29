@@ -104,20 +104,6 @@ export default function LOIForm() {
 
   return (
     <>
-      {/* Hidden Netlify form for static form capture */}
-      <form name="farmer-loi" data-netlify="true" hidden>
-        <input type="hidden" name="form-name" value="farmer-loi" />
-        <input name="fullName" />
-        <input name="farmName" />
-        <input name="county" />
-        <input name="acreage" />
-        <input name="phone" />
-        <input name="email" />
-        <input name="services" />
-        <input name="timeframe" />
-        <textarea name="notes" />
-      </form>
-
       {/* Actual form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
