@@ -18,12 +18,12 @@ const config: Config = {
         display: ["Playfair Display", "Georgia", "serif"],
       },
       animation: {
-        "fade-up": "fadeUp 0.7s ease-out forwards",
-        "fade-in": "fadeIn 0.8s ease-out forwards",
+        "fade-up": "fadeUp 0.7s ease-out both",
+        "fade-in": "fadeIn 0.8s ease-out both",
         "float": "float 4s ease-in-out infinite",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "slide-in-left": "slideInLeft 0.6s ease-out forwards",
-        "slide-in-right": "slideInRight 0.6s ease-out forwards",
+        "slide-in-left": "slideInLeft 0.6s ease-out both",
+        "slide-in-right": "slideInRight 0.6s ease-out both",
       },
       keyframes: {
         fadeUp: {
