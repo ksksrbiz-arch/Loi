@@ -4,7 +4,7 @@ import LOIForm from "@/components/LOIForm";
 export const metadata: Metadata = {
   title: "Submit Your Letter of Intent | Oregon Aerial Services",
   description:
-    "Submit a Letter of Intent for aerial agricultural services in Oregon. No consultation fee. No commitment. We'll follow up within 24 hours.",
+    "Submit a Letter of Intent for aerial agricultural services in Oregon. No consultation fee. No commitment. We'll review your request and follow up with next steps.",
 };
 
 export default function LOIPage() {
@@ -38,16 +38,16 @@ export default function LOIPage() {
             </div>
             <div>
               <p className="font-semibold text-sm">Oregon Aerial Team</p>
-              <p className="text-gray-300 text-xs">Serving all 36 Oregon counties</p>
+              <p className="text-gray-300 text-xs">Built for Oregon growers and field conditions</p>
             </div>
           </div>
 
           {/* Trust signals */}
           <div className="mt-8 pt-8 border-t border-white/20 grid grid-cols-3 gap-4 text-center">
             {[
-              { val: "100K+", lbl: "Acres Served" },
-              { val: "24hr", lbl: "Response Time" },
-              { val: "$0", lbl: "Consultation Fee" },
+              { val: "Less", lbl: "Soil Compaction" },
+              { val: "Faster", lbl: "Field Coverage" },
+              { val: "Clearer", lbl: "Planning Data" },
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-display text-xl font-bold text-wheat">
@@ -78,8 +78,8 @@ export default function LOIPage() {
               Submit Your Letter of Intent
             </h1>
             <p className="text-gray-200 text-sm">
-              No consultation fee. No commitment. We&apos;ll follow up within 24
-              hours.
+              No consultation fee. No commitment. Tell us about your project and
+              we&apos;ll follow up with next steps.
             </p>
           </div>
         </div>
@@ -95,8 +95,8 @@ export default function LOIPage() {
               Submit Your Letter of Intent
             </h1>
             <p className="text-gray-500 mt-3">
-              No consultation fee. No commitment. We&apos;ll follow up within 24
-              hours with a free estimate.
+              No consultation fee. No commitment. Share your needs and we&apos;ll
+              follow up with a free estimate.
             </p>
           </div>
 
@@ -113,4 +113,3 @@ export default function LOIPage() {
     </div>
   );
 }
-

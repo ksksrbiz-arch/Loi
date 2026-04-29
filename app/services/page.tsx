@@ -62,7 +62,7 @@ const services = [
       "Our field mapping service delivers GPS-accurate aerial imagery and boundary data for your entire property.",
       "Deliverables include georeferenced orthomosaics, elevation models, and exportable shapefiles compatible with common farm management software.",
       "Field maps are invaluable for planning irrigation layouts, documenting drainage issues, and tracking crop health over time.",
-      "Mapping flights are typically completed in a single day, with processed deliverables ready within 48 hours.",
+      "Mapping flights are planned around your operational needs, with deliverables prepared for practical on-farm use.",
     ],
     reversed: true,
   },
@@ -74,7 +74,7 @@ const services = [
     imageAlt: "Beautiful aerial farm photography showcasing Oregon farmland",
     detail: [
       "High-resolution aerial photography gives you a bird's-eye view of your farm for records, marketing, or insurance documentation.",
-      "We capture still images and video footage in 4K, giving you professional-quality visuals that showcase your operation.",
+      "We capture high-resolution still images and video footage that showcase your operation with professional clarity.",
       "Photos are useful for monitoring crop progress, identifying problem areas, and building marketing materials for farm sales or agritourism.",
       "All imagery is delivered digitally with full resolution files and a web-optimized gallery link.",
     ],
@@ -169,4 +169,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

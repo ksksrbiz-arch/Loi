@@ -26,21 +26,33 @@ const services = [
     icon: "🗺️",
     title: "Field Mapping",
     description:
-      "GPS-accurate aerial mapping with georeferenced orthomosaics and shapefiles delivered within 48 hours.",
+      "Aerial mapping with georeferenced orthomosaics and shapefiles prepared for practical farm planning.",
   },
   {
     icon: "📸",
     title: "Aerial Photography",
     description:
-      "4K high-resolution aerial photos and video of your farm for records, insurance, and marketing.",
+      "High-resolution aerial photos and video of your farm for records, insurance, and marketing.",
   },
 ];
 
-const stats = [
-  { value: "100K+", label: "Acres Served" },
-  { value: "36", label: "Oregon Counties" },
-  { value: "10+", label: "Years Experience" },
-  { value: "24hr", label: "Response Time" },
+const outcomes = [
+  {
+    title: "Less Soil Compaction",
+    description: "Cover fields from the air and keep heavy equipment out of sensitive ground conditions.",
+  },
+  {
+    title: "Faster Field Coverage",
+    description: "Handle large application and seeding needs efficiently when timing matters most.",
+  },
+  {
+    title: "Sharper Crop Decisions",
+    description: "Use mapping and tracking insights to spot issues earlier and plan the next move with confidence.",
+  },
+  {
+    title: "Cleaner Documentation",
+    description: "Keep organized imagery and flight records ready for planning, communication, and reporting.",
+  },
 ];
 
 export default function HomePage() {
@@ -66,7 +78,7 @@ export default function HomePage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 glass border border-white/25 text-wheat rounded-full px-5 py-2 text-sm font-semibold mb-8 animate-fade-in">
             <span>✈️</span>
-            <span>Oregon&apos;s Premier Aerial Agricultural Services</span>
+            <span>Aerial agricultural services for Oregon farms</span>
           </div>
 
           {/* Headline */}
@@ -140,15 +152,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Stats Strip ── */}
+      {/* ── Outcomes Strip ── */}
       <section className="bg-forest py-10 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <div className="font-display text-3xl md:text-4xl font-bold text-wheat">
-                {stat.value}
+          {outcomes.map((outcome) => (
+            <div key={outcome.title}>
+              <div className="font-display text-2xl md:text-3xl font-bold text-wheat">
+                {outcome.title}
               </div>
-              <div className="text-green-200 text-sm mt-1">{stat.label}</div>
+              <div className="text-green-200 text-sm mt-2 leading-relaxed">
+                {outcome.description}
+              </div>
             </div>
           ))}
         </div>
@@ -207,8 +221,8 @@ export default function HomePage() {
             },
             {
               step: "02",
-              title: "We Follow Up in 24hrs",
-              desc: "One of our local Oregon pilots will review your request and reach out with a free estimate.",
+              title: "We Review Your Request",
+              desc: "Our team reviews your project details and reaches out to discuss the right next step for your operation.",
             },
             {
               step: "03",
@@ -239,4 +253,3 @@ export default function HomePage() {
     </>
   );
 }
-

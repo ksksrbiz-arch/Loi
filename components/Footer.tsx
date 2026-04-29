@@ -59,7 +59,7 @@ export default function Footer() {
             </a>
             <p>📍 Portland, OR</p>
             <p className="text-xs text-gray-500 mt-2">
-              Serving all 36 Oregon counties
+              Supporting growers across Oregon
             </p>
           </div>
         </div>
@@ -73,4 +73,3 @@ export default function Footer() {
     </footer>
   );
 }
-

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Thank You | Oregon Aerial Services",
   description:
-    "We received your Letter of Intent. We'll follow up within 24 hours.",
+    "We received your Letter of Intent and will review your request before following up with next steps.",
 };
 
 export default function ThankYouPage() {
@@ -47,8 +47,8 @@ export default function ThankYouPage() {
         </h1>
         <p className="text-lg text-gray-200 mb-4 leading-relaxed">
           Thank you for submitting your Letter of Intent. Our team will review
-          your request and follow up within{" "}
-          <span className="text-wheat font-semibold">24 hours</span>.
+          your request and follow up with the right next steps for your
+          operation.
         </p>
         <p className="text-gray-300 text-sm mb-10 leading-relaxed">
           There is no consultation fee and no obligation — we&apos;re simply
@@ -59,9 +59,9 @@ export default function ThankYouPage() {
         {/* Stats reminder */}
         <div className="grid grid-cols-3 gap-4 mb-10 border-t border-white/20 pt-8">
           {[
-            { val: "24hr", lbl: "Follow-up" },
-            { val: "$0", lbl: "Consult Fee" },
-            { val: "100%", lbl: "Obligation-Free" },
+            { val: "Less", lbl: "Ground Disruption" },
+            { val: "More", lbl: "Field Visibility" },
+            { val: "Clear", lbl: "Next Steps" },
           ].map((s) => (
             <div key={s.lbl}>
               <div className="font-display text-2xl font-bold text-wheat">
@@ -82,4 +82,3 @@ export default function ThankYouPage() {
     </section>
   );
 }
-
