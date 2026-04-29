@@ -98,16 +98,16 @@ export default function LOIForm() {
   };
 
   const inputClass =
-    "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-forest text-gray-800";
-  const errorClass = "text-red-500 text-sm mt-1";
-  const labelClass = "block font-semibold text-gray-700 mb-1";
+    "w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest focus:border-transparent text-gray-800 bg-white shadow-sm transition-shadow hover:shadow-md";
+  const errorClass = "text-red-500 text-xs mt-1.5 flex items-center gap-1";
+  const labelClass = "block font-semibold text-gray-700 mb-1.5 text-sm";
 
   return (
     <>
       {/* Actual form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white rounded-lg shadow-md p-8 space-y-6"
+        className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 space-y-5"
         noValidate
       >
         {/* Full Name */}
@@ -180,16 +180,21 @@ export default function LOIForm() {
         {/* Services */}
         <div>
           <p className={labelClass}>Services Needed * (select all that apply)</p>
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {SERVICE_OPTIONS.map((svc) => (
-              <label key={svc} className="flex items-center gap-2 text-gray-700">
+              <label
+                key={svc}
+                className="flex items-center gap-3 text-gray-700 cursor-pointer group"
+              >
                 <input
                   type="checkbox"
                   value={svc}
                   {...register("services")}
-                  className="accent-forest"
+                  className="w-4 h-4 accent-forest rounded cursor-pointer"
                 />
-                {svc}
+                <span className="text-sm group-hover:text-forest transition-colors">
+                  {svc}
+                </span>
               </label>
             ))}
           </div>
@@ -240,7 +245,7 @@ export default function LOIForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full bg-forest text-white py-3 rounded font-semibold hover:bg-darkforest transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+          className="w-full bg-forest text-white py-4 rounded-xl font-bold text-lg hover:bg-darkforest transition-all shadow-forest shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
         >
           {submitting ? (
             <>
