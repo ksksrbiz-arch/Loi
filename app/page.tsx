@@ -36,7 +36,7 @@ const services = [
   },
 ];
 
-const outcomes = [
+const benefits = [
   {
     title: "Less Soil Compaction",
     description: "Cover fields from the air and keep heavy equipment out of sensitive ground conditions.",
@@ -155,13 +155,13 @@ export default function HomePage() {
       {/* ── Outcomes Strip ── */}
       <section className="bg-forest py-10 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {outcomes.map((outcome) => (
-            <div key={outcome.title}>
+          {benefits.map((benefit) => (
+            <div key={benefit.title}>
               <div className="font-display text-2xl md:text-3xl font-bold text-wheat">
-                {outcome.title}
+                {benefit.title}
               </div>
               <div className="text-green-200 text-sm mt-2 leading-relaxed">
-                {outcome.description}
+                {benefit.description}
               </div>
             </div>
           ))}
