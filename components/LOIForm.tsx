@@ -72,21 +72,22 @@ export default function LOIForm() {
   const onSubmit = async (data: FormData) => {
     setSubmitting(true);
     try {
-      const formData = new FormData();
-      formData.append("form-name", "farmer-loi");
-      formData.append("fullName", data.fullName);
-      formData.append("farmName", data.farmName);
-      formData.append("county", data.county);
-      formData.append("acreage", String(data.acreage));
-      formData.append("phone", data.phone);
-      formData.append("email", data.email);
-      data.services.forEach((s) => formData.append("services", s));
-      formData.append("timeframe", data.timeframe);
-      if (data.notes) formData.append("notes", data.notes);
+      const params = new URLSearchParams();
+      params.append("form-name", "farmer-loi");
+      params.append("fullName", data.fullName);
+      params.append("farmName", data.farmName);
+      params.append("county", data.county);
+      params.append("acreage", String(data.acreage));
+      params.append("phone", data.phone);
+      params.append("email", data.email);
+      data.services.forEach((s) => params.append("services", s));
+      params.append("timeframe", data.timeframe);
+      if (data.notes) params.append("notes", data.notes);
 
       await fetch("/", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
       });
 
       router.push("/thank-you");
