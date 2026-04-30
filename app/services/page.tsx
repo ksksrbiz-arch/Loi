@@ -39,7 +39,7 @@ const services = [
     detail: [
       "Drones are the fastest, lowest-impact way to seed pastures, hillsides, riparian buffers, and cover crops — including over standing crops where ground rigs would crush stands.",
       "We calibrate hoppers for ryegrass, fescue, clover, vetch, radish, and native Oregon mixes. You get even distribution at the rate you specify, even on slopes that would put a tractor on its side.",
-      "Fly-on dates align with weather windows so seed isn&apos;t washed off before germination.",
+      "Fly-on dates align with weather windows so seed isn't washed off before germination.",
     ],
     bullets: [
       "Slopes up to ~35° handled cleanly",
@@ -74,7 +74,7 @@ const services = [
     imageAlt: "Aerial view of precisely tracked crop rows",
     detail: [
       "Boltrak rides on every flight to deliver real-time tracking and post-flight reports — coverage maps, application rates, and full GPS telemetry.",
-      "This is the documentation insurance and compliance want, and it&apos;s also the data you&apos;ll actually use to plan next season.",
+      "This is the documentation insurance and compliance want, and it's also the data you'll actually use to plan next season.",
       "Pairs at no extra hardware cost with our spraying and seeding work.",
     ],
     bullets: [
@@ -127,7 +127,7 @@ export default function ServicesPage() {
     <>
       {/* ── Hero ── */}
       <section
-        className="relative py-28 px-6 text-center overflow-hidden"
+        className="relative py-20 md:py-28 px-6 text-center overflow-hidden"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1920&q=80)",

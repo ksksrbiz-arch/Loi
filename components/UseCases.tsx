@@ -28,7 +28,7 @@ const CASES: UseCase[] = [
     crop: "Hops & vineyards",
     title: "Trellised canopies",
     problem:
-      "Booms can&apos;t reach above the wire and planes can&apos;t fly low enough to penetrate.",
+      "Booms can't reach above the wire and planes can't fly low enough to penetrate.",
     solution:
       "Drones fly the rows from above with downwash that drives droplets into the canopy — no rig in the row, no broken trellis.",
     image:

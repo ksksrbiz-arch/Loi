@@ -90,7 +90,7 @@ export default function HomePage() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-lg animate-fade-up">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-lg animate-fade-up">
             The smarter way to
             <br />
             <span className="text-gradient-wheat">treat every acre</span>
@@ -165,10 +165,10 @@ export default function HomePage() {
 
       {/* ── Pitch Strip ── */}
       <section className="bg-darkforest text-white py-12 px-6 border-b border-white/5">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           <AnimateIn variant="left">
             <div className="flex md:flex-col items-center md:items-start gap-3">
-              <span className="font-display text-4xl text-wheat font-bold">01</span>
+              <span className="font-display text-3xl md:text-4xl text-wheat font-bold shrink-0">01</span>
               <p className="text-sm md:text-base text-gray-200 leading-snug">
                 <span className="font-bold text-white">No more &ldquo;not big enough.&rdquo;</span>{" "}
                 Plane operators won&apos;t touch fields under 40 acres. We&apos;re
@@ -178,7 +178,7 @@ export default function HomePage() {
           </AnimateIn>
           <AnimateIn>
             <div className="flex md:flex-col items-center md:items-start gap-3">
-              <span className="font-display text-4xl text-wheat font-bold">02</span>
+              <span className="font-display text-3xl md:text-4xl text-wheat font-bold shrink-0">02</span>
               <p className="text-sm md:text-base text-gray-200 leading-snug">
                 <span className="font-bold text-white">No more wheel tracks.</span>{" "}
                 Wet ground? Steep ground? Trellised canopy? We fly over all of it.
@@ -187,7 +187,7 @@ export default function HomePage() {
           </AnimateIn>
           <AnimateIn variant="right">
             <div className="flex md:flex-col items-center md:items-start gap-3">
-              <span className="font-display text-4xl text-wheat font-bold">03</span>
+              <span className="font-display text-3xl md:text-4xl text-wheat font-bold shrink-0">03</span>
               <p className="text-sm md:text-base text-gray-200 leading-snug">
                 <span className="font-bold text-white">No more guesswork.</span>{" "}
                 Every pass returns a coverage map, a flight log, and proof of

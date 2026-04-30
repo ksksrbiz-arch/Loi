@@ -185,6 +185,10 @@ export default function ComparisonTable() {
 
         <AnimateIn variant="scale">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-card-lg overflow-hidden">
+            {/* Mobile scroll hint */}
+            <p className="md:hidden text-center text-xs text-gray-400 py-2 border-b border-white/5">
+              ← Scroll to compare →
+            </p>
             <div className="overflow-x-auto nice-scroll">
               <table className="w-full min-w-[760px]">
                 <thead>
@@ -217,7 +221,7 @@ export default function ComparisonTable() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
-                  {ROWS.map((row, i) => (
+                  {ROWS.map((row) => (
                     <tr
                       key={row.label}
                       className="hover:bg-white/[0.04] transition-colors"
@@ -228,7 +232,6 @@ export default function ComparisonTable() {
                       <Cell {...row.drone} highlight />
                       <Cell {...row.plane} />
                       <Cell {...row.ground} />
-                      <td className="hidden">{i}</td>
                     </tr>
                   ))}
                 </tbody>

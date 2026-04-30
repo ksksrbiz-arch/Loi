@@ -64,7 +64,7 @@ export default function LOIPage() {
       </div>
 
       {/* ── Right: Form panel ── */}
-      <div className="flex-1 bg-gray-50 overflow-y-auto">
+      <div className="flex-1 bg-gray-50">
         {/* Mobile hero (visible only on small screens) */}
         <div
           className="lg:hidden relative py-16 px-6 text-center text-white overflow-hidden"

@@ -107,7 +107,7 @@ export default function LOIForm() {
       {/* Actual form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 space-y-5"
+        className="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 sm:p-8 space-y-5"
         noValidate
       >
         {/* Full Name */}
@@ -245,7 +245,7 @@ export default function LOIForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full bg-forest text-white py-4 rounded-xl font-bold text-lg hover:bg-darkforest transition-all shadow-forest shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+          className="w-full bg-forest text-white py-4 rounded-xl font-bold text-lg hover:bg-darkforest transition-all shadow-forest hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
         >
           {submitting ? (
             <>
