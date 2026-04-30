@@ -1,27 +1,50 @@
 import Link from "next/link";
+import DroneGlyph from "./DroneGlyph";
 
 export default function Footer() {
   return (
-    <footer className="bg-darkforest text-white">
-      <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="relative bg-darkforest text-white overflow-hidden">
+      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
+      <div className="absolute -top-32 -right-32 w-96 h-96 bg-forest/40 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-wheat text-2xl">✈</span>
-            <span className="font-display font-bold text-lg text-white">
-              Oregon Aerial Services
+        <div className="md:col-span-2">
+          <div className="flex items-center gap-2.5 mb-4">
+            <span className="relative w-8 h-8 flex items-center justify-center">
+              <span className="absolute inset-0 rounded-full bg-wheat/15" />
+              <DroneGlyph
+                className="relative w-6 h-6 text-wheat"
+                spinning={false}
+              />
+            </span>
+            <span className="font-display font-bold text-lg text-white tracking-tight">
+              Oregon <span className="text-wheat">Aerial</span>
             </span>
           </div>
-          <p className="text-gray-400 text-sm leading-relaxed">
-            Professional aerial agricultural solutions for Oregon farmers.
-            Precision application. Real results.
+          <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+            Modern drone agriculture for Oregon farms. Precision spraying,
+            aerial seeding, and field intelligence — delivered with less drift,
+            no compaction, and the data to prove every pass.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {["FAA Part 137", "RTK-GPS", "Insured", "Oregon-based"].map(
+              (b) => (
+                <span
+                  key={b}
+                  className="text-[11px] uppercase tracking-widest font-bold bg-white/5 border border-white/10 text-wheat px-2.5 py-1 rounded-full"
+                >
+                  {b}
+                </span>
+              )
+            )}
+          </div>
         </div>
 
         {/* Quick Links */}
         <div>
           <h3 className="font-bold text-sm uppercase tracking-widest text-wheat mb-4">
-            Quick Links
+            Site
           </h3>
           <ul className="flex flex-col gap-2.5 text-sm text-gray-400">
             <li>
@@ -35,6 +58,14 @@ export default function Footer() {
                 className="hover:text-white transition-colors"
               >
                 Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#compare"
+                className="hover:text-white transition-colors"
+              >
+                Drone vs. Plane vs. Ground
               </Link>
             </li>
             <li>
@@ -58,17 +89,18 @@ export default function Footer() {
               📞 (503) 000-0000
             </a>
             <p>📍 Portland, OR</p>
-            <p className="text-xs text-gray-500 mt-2">
-              Supporting growers across Oregon
+            <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+              Operating across the Willamette Valley, Columbia Basin, Southern
+              Oregon, and Eastern Oregon.
             </p>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-green-900/50 text-center py-5 text-xs text-gray-500">
+      <div className="relative border-t border-green-900/60 text-center py-5 text-xs text-gray-500">
         © 2026 Oregon Aerial Services. All rights reserved. FAA Certified
-        Operations.
+        Drone Operations.
       </div>
     </footer>
   );

@@ -1,84 +1,124 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
+import LazyImage from "@/components/LazyImage";
+import AnimateIn from "@/components/AnimateIn";
+import ComparisonTable from "@/components/ComparisonTable";
 
 export const metadata: Metadata = {
-  title: "Our Services | Oregon Aerial Services",
+  title: "Drone Services | Oregon Aerial Services",
   description:
-    "Aerial fertilizer application, Boltrak field tracking, grass seed spreading, field mapping, and aerial photography for Oregon farmers.",
+    "Precision drone spraying, aerial seeding, NDVI mapping, Boltrak flight logs, and aerial photography for Oregon farmers. No consultation fee.",
 };
 
 const services = [
   {
     icon: "🌿",
-    title: "Aerial Fertilizer Application",
+    title: "Precision Drone Spraying",
     image:
       "https://images.unsplash.com/photo-1625246333195-cbbb14e83d84?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Green crop field ready for aerial fertilizer application",
+    imageAlt: "Green crop field benefiting from precision drone spraying",
     detail: [
-      "Our aerial fertilizer application service covers vast acreage in a fraction of the time it takes ground equipment.",
-      "We use precision GPS-guided flight paths to ensure even distribution across your entire field, minimizing waste.",
-      "Whether you need nitrogen, phosphate, or custom blends, our pilots work with your agronomist to deliver exactly what your crops need.",
-      "Reduce soil compaction and protect your crop stands by keeping heavy machinery off the field.",
+      "We deliver fertilizer, fungicide, and crop-protection chemistries with ultra-low-volume drone passes — typically 1–2 gallons of water per acre versus 10–20 with a ground rig.",
+      "RTK-GPS guidance gives us centimeter-level swath spacing, so there are no gaps and no double-coverage. Rotor downwash drives droplets onto the canopy instead of letting them blow off-target.",
+      "Variable-rate prescriptions and zone-by-zone spot treatment are native — we treat the 8 acres that need attention, not the whole 80.",
+    ],
+    bullets: [
+      "FAA Part 137 certified for chemical application",
+      "Down to 1-acre minimums (no plane ferry fees)",
+      "Up to ~40 ac/hr coverage with a fast-fill workflow",
     ],
     reversed: false,
   },
   {
-    icon: "📡",
+    icon: "🌾",
+    title: "Aerial Seeding & Cover Crops",
+    image:
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Lush green pasture and rolling hills in Oregon",
+    detail: [
+      "Drones are the fastest, lowest-impact way to seed pastures, hillsides, riparian buffers, and cover crops — including over standing crops where ground rigs would crush stands.",
+      "We calibrate hoppers for ryegrass, fescue, clover, vetch, radish, and native Oregon mixes. You get even distribution at the rate you specify, even on slopes that would put a tractor on its side.",
+      "Fly-on dates align with weather windows so seed isn&apos;t washed off before germination.",
+    ],
+    bullets: [
+      "Slopes up to ~35° handled cleanly",
+      "Inter-seeding into living cash crops",
+      "Riparian and restoration zones welcome",
+    ],
+    reversed: true,
+  },
+  {
+    icon: "🗺️",
+    title: "Field Mapping & NDVI",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Aerial view of farm fields showing geometric patterns",
+    detail: [
+      "We capture georeferenced orthomosaics, elevation models, and multispectral NDVI imagery for crop-health diagnostics — all exportable as GeoTIFFs and shapefiles.",
+      "Output is ready for John Deere Operations Center, Climate FieldView, Granular, and most farm-management software you already use.",
+      "Mapping flights are scheduled around your operational needs, with deliverables built for practical on-farm decisions, not screenshots.",
+    ],
+    bullets: [
+      "RGB, multispectral, and NDVI captures",
+      "Stitched orthomosaics + DSM/DTM elevation",
+      "Drainage, weed, and stand-loss diagnostics",
+    ],
+    reversed: false,
+  },
+  {
+    icon: "🛰️",
     title: "Boltrak Field Tracking",
     image:
       "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Aerial view of precisely tracked crop rows",
     detail: [
-      "Boltrak integrates with our aircraft to provide real-time field tracking and data logging during every flight.",
-      "After each operation you receive a detailed report showing coverage maps, application rates, and GPS flight logs.",
-      "This data helps you make smarter decisions for future seasons and provides documentation for insurance or compliance purposes.",
-      "Our Boltrak service pairs seamlessly with fertilizer application or seed spreading jobs at no extra hardware cost.",
+      "Boltrak rides on every flight to deliver real-time tracking and post-flight reports — coverage maps, application rates, and full GPS telemetry.",
+      "This is the documentation insurance and compliance want, and it&apos;s also the data you&apos;ll actually use to plan next season.",
+      "Pairs at no extra hardware cost with our spraying and seeding work.",
+    ],
+    bullets: [
+      "Per-pass coverage and rate maps",
+      "Full GPS flight log + telemetry export",
+      "Compliance-ready documentation",
     ],
     reversed: true,
   },
   {
-    icon: "🌾",
-    title: "Grass Seed Spreading",
+    icon: "🔬",
+    title: "Scouting & Inspection",
     image:
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Lush green pasture and rolling hills in Oregon",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Aerial farm scouting captures field detail at high resolution",
     detail: [
-      "Aerial grass seed spreading is the fastest and most efficient method for large pastures, hillsides, and riparian restoration zones.",
-      "We calibrate our hoppers for precise seed-rate delivery so you get optimal germination without overseeding.",
-      "Our pilots have experience with ryegrass, fescue, clover, and native Oregon grass mixes.",
-      "Aerial spreading reaches terrain that is inaccessible or risky for ground equipment, making it ideal for steep or wet fields.",
+      "We fly fast scouting passes to find disease patches, drainage issues, irrigation failures, and stand loss — before the problem doubles in size.",
+      "Output ranges from a quick photo report to a full multispectral diagnostic, depending on what you need.",
+      "Most farms run scouting 2–4× per season; we can build a recurring schedule around your crop calendar.",
+    ],
+    bullets: [
+      "Targeted fly-overs after weather events",
+      "Disease, drainage, and irrigation issues",
+      "Recurring season-long scouting plans",
     ],
     reversed: false,
-  },
-  {
-    icon: "🗺️",
-    title: "Field Mapping",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Aerial view of farm fields showing geometric patterns",
-    detail: [
-      "Our field mapping service delivers GPS-accurate aerial imagery and boundary data for your entire property.",
-      "Deliverables include georeferenced orthomosaics, elevation models, and exportable shapefiles compatible with common farm management software.",
-      "Field maps are invaluable for planning irrigation layouts, documenting drainage issues, and tracking crop health over time.",
-      "Mapping flights are planned around your operational needs, with deliverables prepared for practical on-farm use.",
-    ],
-    reversed: true,
   },
   {
     icon: "📸",
-    title: "Aerial Photography",
+    title: "Aerial Photography & Video",
     image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Beautiful aerial farm photography showcasing Oregon farmland",
     detail: [
-      "High-resolution aerial photography gives you a bird&apos;s-eye view of your farm for records, marketing, or insurance documentation.",
-      "We capture high-resolution still images and video footage for records, planning, insurance, and marketing needs.",
-      "Photos are useful for monitoring crop progress, identifying problem areas, and building marketing materials for farm sales or agritourism.",
-      "All imagery is delivered digitally with full resolution files and a web-optimized gallery link.",
+      "High-resolution stills and 4K video for records, real-estate, insurance, and marketing — agritourism, vineyard sites, ranch listings, you name it.",
+      "Delivered digitally with both full-resolution masters and a web-optimized gallery you can share.",
+      "Often paired with a mapping or scouting flight, so you cover two needs in one mobilization.",
     ],
-    reversed: false,
+    bullets: [
+      "20+ MP stills and 4K cinematic video",
+      "Drone, slider, and orbit moves",
+      "Web-ready exports + raw masters",
+    ],
+    reversed: true,
   },
 ];
 
@@ -95,18 +135,19 @@ export default function ServicesPage() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-darkforest/80 via-darkforest/60 to-darkforest/80" />
-        <div className="relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-darkforest/85 via-darkforest/60 to-darkforest/90" />
+        <div className="absolute inset-0 grid-bg opacity-25" />
+        <div className="relative z-10 animate-fade-up">
           <p className="text-wheat font-semibold uppercase tracking-widest text-sm mb-3">
-            What We Do
+            What we do
           </p>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-5 text-shadow-lg">
-            Our Aerial Services
+            Drone Services for Oregon Farms
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-            From precision fertilizer application to detailed field mapping, we
-            provide the full range of aerial agricultural services Oregon farmers
-            need.
+            From precision spraying to NDVI scouting — every service uses
+            modern agricultural drones to deliver outcomes a plane or a
+            ground rig can&apos;t match.
           </p>
         </div>
       </section>
@@ -118,50 +159,79 @@ export default function ServicesPage() {
           className={`py-20 px-6 ${svc.reversed ? "bg-gray-50" : "bg-white"}`}
         >
           <div
-            className={`max-w-5xl mx-auto flex flex-col ${
+            className={`max-w-6xl mx-auto flex flex-col ${
               svc.reversed ? "md:flex-row-reverse" : "md:flex-row"
             } items-center gap-12`}
           >
             {/* Image */}
-            <div className="w-full md:w-2/5 shrink-0 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="relative w-full aspect-[4/3]">
-                <Image
+            <AnimateIn
+              variant={svc.reversed ? "right" : "left"}
+              className="w-full md:w-2/5 shrink-0"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-card-lg group">
+                <LazyImage
                   src={svc.image}
                   alt={svc.imageAlt}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  width={900}
+                  height={675}
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority={idx === 0}
+                  rounded="rounded-2xl"
+                  wrapperClassName="aspect-[4/3]"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
                 />
+                {/* Floating badge */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 bg-darkforest/90 backdrop-blur-md text-wheat px-3 py-2 rounded-lg border border-wheat/20 text-xs font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-wheat animate-pulse" />
+                  Drone-delivered
+                </div>
               </div>
-            </div>
+            </AnimateIn>
 
             {/* Content */}
-            <div className="flex-1">
+            <AnimateIn
+              variant={svc.reversed ? "left" : "right"}
+              className="flex-1"
+            >
               <div className="text-4xl mb-3">{svc.icon}</div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-darkforest mb-5">
                 {svc.title}
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-3 mb-6">
                 {svc.detail.map((para, i) => (
                   <p key={i} className="text-gray-600 leading-relaxed">
                     {para}
                   </p>
                 ))}
               </div>
+              <ul className="space-y-2 mb-7">
+                {svc.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-start gap-2.5 text-sm text-darkforest"
+                  >
+                    <span className="shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded bg-emerald-100 text-emerald-700 font-bold">
+                      ✓
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
               <Link
                 href="/loi"
-                className="inline-block mt-7 bg-forest text-white px-7 py-3 rounded-xl font-bold hover:bg-darkforest transition-all shadow-lg hover:-translate-y-0.5"
+                className="inline-block bg-forest text-white px-7 py-3 rounded-xl font-bold hover:bg-darkforest transition-all shadow-lg hover:-translate-y-0.5"
               >
                 Get a Quote for This Service →
               </Link>
-            </div>
+            </AnimateIn>
           </div>
         </section>
       ))}
 
+      <ComparisonTable />
+
       <CTABanner
-        heading="Ready to Fly?"
+        heading="Ready to fly?"
         subtext="Submit a Letter of Intent — no commitment, no consultation fee."
         buttonText="Submit Your LOI"
         buttonHref="/loi"
