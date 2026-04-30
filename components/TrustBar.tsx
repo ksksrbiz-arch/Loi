@@ -1,41 +1,48 @@
+"use client";
+
+import AnimateIn from "./AnimateIn";
+
 export default function TrustBar() {
   const items = [
+    {
+      icon: "🛂",
+      label: "FAA Part 137 Operator",
+      sub: "Licensed for ag chemical application",
+    },
+    {
+      icon: "🛰️",
+      label: "RTK-GPS Precision",
+      sub: "Centimeter-level pass spacing",
+    },
+    {
+      icon: "🏛️",
+      label: "Oregon-Based & Insured",
+      sub: "Local crews, local response",
+    },
     {
       icon: "🚫💲",
       label: "No Consultation Fee",
       sub: "Free quotes, always",
     },
-    {
-      icon: "🏛️",
-      label: "Oregon-Based & Licensed",
-      sub: "Local expertise you can trust",
-    },
-    {
-      icon: "✈️",
-      label: "FAA Compliant Operations",
-      sub: "Fully certified pilots & aircraft",
-    },
   ];
 
   return (
-    <section className="bg-gradient-to-r from-darkforest to-forest py-10 px-6">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {items.map((item) => (
-          <div
-            key={item.label}
-            className="flex items-center gap-4 bg-white/10 rounded-xl px-5 py-4 border border-white/10"
-          >
-            <div className="text-3xl shrink-0">{item.icon}</div>
-            <div>
-              <p className="font-bold text-white text-sm md:text-base">
-                {item.label}
-              </p>
-              <p className="text-green-200 text-xs mt-0.5">{item.sub}</p>
+    <section className="bg-gradient-to-r from-darkforest via-forest to-darkforest py-12 px-6 border-y border-white/5">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {items.map((item, i) => (
+          <AnimateIn key={item.label} delay={i * 70} variant="up">
+            <div className="flex items-center gap-4 bg-white/5 rounded-xl px-5 py-4 border border-white/10 hover:bg-white/10 hover:border-wheat/30 transition-all duration-300 h-full">
+              <div className="text-3xl shrink-0">{item.icon}</div>
+              <div>
+                <p className="font-bold text-white text-sm md:text-base leading-tight">
+                  {item.label}
+                </p>
+                <p className="text-green-200 text-xs mt-1">{item.sub}</p>
+              </div>
             </div>
-          </div>
+          </AnimateIn>
         ))}
       </div>
     </section>
   );
 }
-

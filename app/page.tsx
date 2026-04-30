@@ -2,56 +2,50 @@ import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
 import TrustBar from "@/components/TrustBar";
 import CTABanner from "@/components/CTABanner";
+import MetricsGrid from "@/components/MetricsGrid";
+import ComparisonTable from "@/components/ComparisonTable";
+import WhyDrone from "@/components/WhyDrone";
+import UseCases from "@/components/UseCases";
+import AnimateIn from "@/components/AnimateIn";
+import DroneGlyph from "@/components/DroneGlyph";
 
 const services = [
   {
     icon: "🌿",
-    title: "Aerial Fertilizer Application",
+    title: "Precision Drone Spraying",
     description:
-      "Precision aerial fertilizer spreading across your entire acreage in a fraction of the time ground equipment takes.",
-  },
-  {
-    icon: "📡",
-    title: "Boltrak Field Tracking",
-    description:
-      "Real-time field tracking and data logging with detailed coverage reports for smarter farm decisions.",
+      "Fertilizer, fungicide, and crop protection delivered with RTK-GPS swath spacing and ultra-low water volumes.",
+    highlight: "Most popular",
   },
   {
     icon: "🌾",
-    title: "Grass Seed Spreading",
+    title: "Aerial Seeding",
     description:
-      "Efficient aerial grass seed distribution calibrated for optimal germination across pastures and restoration projects.",
+      "Cover crops, grass seed, and pasture restoration spread evenly — even on slopes ground rigs can't reach.",
   },
   {
     icon: "🗺️",
-    title: "Field Mapping",
+    title: "Field Mapping & NDVI",
     description:
-      "Aerial mapping with georeferenced orthomosaics and shapefiles prepared for practical farm planning.",
+      "Georeferenced orthomosaics, elevation models, and crop-health imagery exported for your farm software.",
+  },
+  {
+    icon: "🛰️",
+    title: "Boltrak Flight Logs",
+    description:
+      "Every flight produces a coverage map and application telemetry — clean documentation for compliance and planning.",
   },
   {
     icon: "📸",
     title: "Aerial Photography",
     description:
-      "High-resolution aerial photos and video of your farm for records, insurance, and marketing.",
-  },
-];
-
-const benefits = [
-  {
-    title: "Less Soil Compaction",
-    description: "Cover fields from the air and keep heavy equipment out of sensitive ground conditions.",
+      "High-resolution stills and 4K video for records, insurance, marketing, and agritourism.",
   },
   {
-    title: "Faster Field Coverage",
-    description: "Handle large application and seeding needs efficiently when timing matters most.",
-  },
-  {
-    title: "Sharper Crop Decisions",
-    description: "Use mapping and tracking insights to spot issues earlier and plan the next move with confidence.",
-  },
-  {
-    title: "Cleaner Documentation",
-    description: "Keep organized imagery and flight records ready for planning, communication, and reporting.",
+    icon: "🔬",
+    title: "Scouting & Inspection",
+    description:
+      "Find disease, drainage, and stand-loss issues from above before they cost you a season.",
   },
 ];
 
@@ -72,20 +66,34 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-hero-overlay" />
 
         {/* Subtle vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.4)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.45)_100%)]" />
+
+        {/* Animated grid */}
+        <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+
+        {/* Floating drone glyph */}
+        <div className="absolute top-[18%] right-[8%] hidden md:block animate-drone-hover">
+          <div className="relative">
+            <span className="absolute inset-0 rounded-full bg-wheat/20 blur-2xl" />
+            <DroneGlyph className="relative w-24 h-24 text-wheat drop-shadow-lg" />
+          </div>
+        </div>
 
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto py-24">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 glass border border-white/25 text-wheat rounded-full px-5 py-2 text-sm font-semibold mb-8 animate-fade-in">
-            <span>✈️</span>
-            <span>Aerial agricultural services for Oregon farms</span>
+            <span className="relative flex w-2 h-2">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-wheat opacity-75 animate-ping" />
+              <span className="relative inline-flex w-2 h-2 rounded-full bg-wheat" />
+            </span>
+            <span>Precision drone agriculture for Oregon farms</span>
           </div>
 
           {/* Headline */}
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-lg animate-fade-up">
-            Elevate Your
+            The smarter way to
             <br />
-            <span className="text-wheat">Farm&apos;s Potential</span>
+            <span className="text-gradient-wheat">treat every acre</span>
           </h1>
 
           {/* Subtext */}
@@ -93,9 +101,9 @@ export default function HomePage() {
             className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-200 leading-relaxed animate-fade-up"
             style={{ animationDelay: "0.15s" }}
           >
-            Professional aerial agricultural services built for Oregon farmers.
-            From precision fertilizer application to field mapping — we fly so
-            you don&apos;t have to.
+            We fly modern agricultural drones so you stop trading yield for
+            access. Less drift, no soil compaction, on-site within the hour —
+            and the data to prove every pass.
           </p>
 
           {/* CTAs */}
@@ -110,10 +118,10 @@ export default function HomePage() {
               Get Your Free Quote →
             </Link>
             <Link
-              href="/services"
+              href="#compare"
               className="bg-white/10 glass border-2 border-white/40 text-white px-9 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all"
             >
-              Explore Services
+              Drone vs. Plane vs. Ground
             </Link>
           </div>
 
@@ -126,10 +134,13 @@ export default function HomePage() {
               <span className="text-wheat">✓</span> No Consultation Fee
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="text-wheat">✓</span> Oregon-Based &amp; Licensed
+              <span className="text-wheat">✓</span> FAA Part 137 Certified
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="text-wheat">✓</span> FAA Compliant
+              <span className="text-wheat">✓</span> RTK-GPS Precision
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="text-wheat">✓</span> 1-Acre Minimum
             </span>
           </div>
         </div>
@@ -152,43 +163,81 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Outcomes Strip ── */}
-      <section className="bg-forest py-10 px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {benefits.map((benefit) => (
-            <div key={benefit.title}>
-              <div className="font-display text-2xl md:text-3xl font-bold text-wheat">
-                {benefit.title}
-              </div>
-              <div className="text-green-200 text-sm mt-2 leading-relaxed">
-                {benefit.description}
-              </div>
+      {/* ── Pitch Strip ── */}
+      <section className="bg-darkforest text-white py-12 px-6 border-b border-white/5">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+          <AnimateIn variant="left">
+            <div className="flex md:flex-col items-center md:items-start gap-3">
+              <span className="font-display text-4xl text-wheat font-bold">01</span>
+              <p className="text-sm md:text-base text-gray-200 leading-snug">
+                <span className="font-bold text-white">No more &ldquo;not big enough.&rdquo;</span>{" "}
+                Plane operators won&apos;t touch fields under 40 acres. We&apos;re
+                set up for 1 acre and up.
+              </p>
             </div>
-          ))}
+          </AnimateIn>
+          <AnimateIn>
+            <div className="flex md:flex-col items-center md:items-start gap-3">
+              <span className="font-display text-4xl text-wheat font-bold">02</span>
+              <p className="text-sm md:text-base text-gray-200 leading-snug">
+                <span className="font-bold text-white">No more wheel tracks.</span>{" "}
+                Wet ground? Steep ground? Trellised canopy? We fly over all of it.
+              </p>
+            </div>
+          </AnimateIn>
+          <AnimateIn variant="right">
+            <div className="flex md:flex-col items-center md:items-start gap-3">
+              <span className="font-display text-4xl text-wheat font-bold">03</span>
+              <p className="text-sm md:text-base text-gray-200 leading-snug">
+                <span className="font-bold text-white">No more guesswork.</span>{" "}
+                Every pass returns a coverage map, a flight log, and proof of
+                application.
+              </p>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
-      {/* ── Services Preview ── */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-forest font-semibold uppercase tracking-widest text-sm mb-2">
-              What We Offer
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-darkforest">
-              Full-Service Aerial Agriculture
-            </h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              Every service is delivered by FAA-certified pilots using
-              precision-guided aircraft — optimized for Oregon&apos;s terrain.
-            </p>
-          </div>
+      {/* ── Big-number metrics ── */}
+      <MetricsGrid />
+
+      {/* ── Drone vs Plane vs Ground table ── */}
+      <div id="compare">
+        <ComparisonTable />
+      </div>
+
+      {/* ── Why drone wins ── */}
+      <WhyDrone />
+
+      {/* ── Trust bar ── */}
+      <TrustBar />
+
+      {/* ── Use cases ── */}
+      <UseCases />
+
+      {/* ── Services preview ── */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <AnimateIn>
+            <div className="text-center mb-12">
+              <p className="text-forest font-semibold uppercase tracking-widest text-sm mb-2">
+                What we offer
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-darkforest">
+                Full-service drone agriculture
+              </h2>
+              <p className="text-gray-500 mt-4 max-w-xl mx-auto">
+                FAA Part 137 certified pilots flying agricultural-class drones
+                — purpose-built for Oregon&apos;s terrain, weather, and crops.
+              </p>
+            </div>
+          </AnimateIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc, i) => (
               <ServiceCard key={svc.title} {...svc} index={i} />
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <Link
               href="/services"
               className="inline-block border-2 border-forest text-forest px-8 py-3 rounded-xl font-semibold hover:bg-forest hover:text-white transition-all"
@@ -199,56 +248,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Trust Bar ── */}
-      <TrustBar />
-
-      {/* ── How It Works ── */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center mb-14">
-          <p className="text-forest font-semibold uppercase tracking-widest text-sm mb-2">
-            Simple Process
-          </p>
-          <h2 className="font-display text-4xl font-bold text-darkforest">
-            Getting Started Is Easy
-          </h2>
-        </div>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              step: "01",
-              title: "Submit Your LOI",
-              desc: "Fill out our quick Letter of Intent — no fees, no commitment, just your project details.",
-            },
-            {
-              step: "02",
-              title: "We Review Your Request",
-              desc: "Our team reviews your project details and reaches out to discuss the right next step for your operation.",
-            },
-            {
-              step: "03",
-              title: "We Fly Your Fields",
-              desc: "Once you approve the quote, we schedule the operation and get to work on your land.",
-            },
-          ].map((item) => (
-            <div key={item.step} className="text-center group">
-              <div className="w-16 h-16 rounded-full bg-forest/10 text-forest font-display font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-forest group-hover:text-white transition-all duration-300">
-                {item.step}
-              </div>
-              <h3 className="font-bold text-lg text-darkforest mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+      {/* ── How it works ── */}
+      <section className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
+        <div className="relative max-w-5xl mx-auto">
+          <AnimateIn>
+            <div className="text-center mb-14">
+              <p className="text-forest font-semibold uppercase tracking-widest text-sm mb-2">
+                Simple process
+              </p>
+              <h2 className="font-display text-4xl font-bold text-darkforest">
+                From inquiry to flight in days
+              </h2>
             </div>
-          ))}
+          </AnimateIn>
+          <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Connector line for desktop */}
+            <div
+              className="hidden md:block absolute top-8 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-forest/30 to-transparent"
+              aria-hidden="true"
+            />
+            {[
+              {
+                step: "01",
+                title: "Submit your LOI",
+                desc: "A 2-minute Letter of Intent — no fees, no commitment, just your project details.",
+              },
+              {
+                step: "02",
+                title: "We scope the field",
+                desc: "We review acreage, crop, and timing, then build a quote with a real flight plan.",
+              },
+              {
+                step: "03",
+                title: "We fly your fields",
+                desc: "Once you approve, we mobilize on-site, fly the plan, and hand back full flight data.",
+              },
+            ].map((item, i) => (
+              <AnimateIn key={item.step} delay={i * 100}>
+                <div className="relative text-center group bg-white rounded-2xl p-8 shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 h-full">
+                  <div className="w-16 h-16 rounded-full bg-forest text-white font-display font-bold text-xl flex items-center justify-center mx-auto mb-4 shadow-forest group-hover:bg-wheat group-hover:text-darkforest transition-all duration-300">
+                    {item.step}
+                  </div>
+                  <h3 className="font-display font-bold text-xl text-darkforest mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── CTA Banner ── */}
       <CTABanner
-        heading="Ready to Get Started?"
-        subtext="Submit a Letter of Intent — no commitment, no consultation fee."
+        heading="Ready to fly the smarter way?"
+        subtext="Submit a Letter of Intent — no commitment, no consultation fee. We&apos;ll come back with a real flight plan."
         buttonText="Submit Your LOI"
         buttonHref="/loi"
+        secondaryText="or call (503) 000-0000 →"
+        secondaryHref="tel:5030000000"
       />
     </>
   );
