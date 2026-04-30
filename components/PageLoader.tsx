@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import DroneGlyph from "./DroneGlyph";
 
 /**
  * Brief intro overlay that fades out once the page is interactive.
@@ -47,7 +48,7 @@ export default function PageLoader() {
 
         {/* Drone glyph */}
         <div className="relative w-24 h-24 rounded-full bg-darkforest border border-wheat/40 flex items-center justify-center shadow-glow">
-          <DroneIcon className="w-12 h-12 text-wheat" />
+          <DroneGlyph className="w-12 h-12 text-wheat" spinning={true} />
         </div>
       </div>
 
@@ -55,71 +56,5 @@ export default function PageLoader() {
         Spinning up rotors…
       </p>
     </div>
-  );
-}
-
-function DroneIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      {/* Rotors */}
-      <circle
-        cx="14"
-        cy="14"
-        r="7"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        className="origin-center animate-blade-spin"
-        style={{ transformBox: "fill-box", transformOrigin: "14px 14px" }}
-      />
-      <circle
-        cx="50"
-        cy="14"
-        r="7"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        className="origin-center animate-blade-spin"
-        style={{ transformBox: "fill-box", transformOrigin: "50px 14px" }}
-      />
-      <circle
-        cx="14"
-        cy="50"
-        r="7"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        className="origin-center animate-blade-spin"
-        style={{ transformBox: "fill-box", transformOrigin: "14px 50px" }}
-      />
-      <circle
-        cx="50"
-        cy="50"
-        r="7"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        className="origin-center animate-blade-spin"
-        style={{ transformBox: "fill-box", transformOrigin: "50px 50px" }}
-      />
-      {/* Arms */}
-      <path
-        d="M20 20 L28 28 M44 20 L36 28 M20 44 L28 36 M44 44 L36 36"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      {/* Body */}
-      <rect
-        x="24"
-        y="24"
-        width="16"
-        height="16"
-        rx="3"
-        fill="currentColor"
-        opacity="0.85"
-      />
-    </svg>
   );
 }

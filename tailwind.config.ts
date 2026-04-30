@@ -75,10 +75,10 @@ const config: Config = {
           "80%, 100%": { transform: "scale(2.1)", opacity: "0" },
         },
         droneHover: {
-          "0%, 100%": { transform: "translate(0, 0)" },
-          "25%": { transform: "translate(4px, -6px)" },
-          "50%": { transform: "translate(-3px, -10px)" },
-          "75%": { transform: "translate(-5px, -3px)" },
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
+          "25%": { transform: "translate(4px, -6px) rotate(1.5deg)" },
+          "50%": { transform: "translate(-3px, -10px) rotate(-1deg)" },
+          "75%": { transform: "translate(-5px, -3px) rotate(0.5deg)" },
         },
       },
       backgroundImage: {
