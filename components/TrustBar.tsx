@@ -20,7 +20,7 @@ export default function TrustBar() {
       sub: "Local crews, local response",
     },
     {
-      icon: "🚫💲",
+      icon: "💰",
       label: "No Consultation Fee",
       sub: "Free quotes, always",
     },
@@ -31,13 +31,13 @@ export default function TrustBar() {
       <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4">
         {items.map((item, i) => (
           <AnimateIn key={item.label} delay={i * 70} variant="up">
-            <div className="flex items-center gap-4 bg-white/5 rounded-xl px-5 py-4 border border-white/10 hover:bg-white/10 hover:border-wheat/30 transition-all duration-300 h-full">
-              <div className="text-3xl shrink-0">{item.icon}</div>
-              <div>
-                <p className="font-bold text-white text-sm md:text-base leading-tight">
+            <div className="flex items-center gap-2.5 sm:gap-4 bg-white/5 rounded-xl px-3 py-3 sm:px-5 sm:py-4 border border-white/10 hover:bg-white/10 hover:border-wheat/30 transition-all duration-300 h-full">
+              <div className="text-2xl sm:text-3xl shrink-0">{item.icon}</div>
+              <div className="min-w-0">
+                <p className="font-bold text-white text-xs sm:text-sm md:text-base leading-tight">
                   {item.label}
                 </p>
-                <p className="text-green-200 text-xs mt-1">{item.sub}</p>
+                <p className="text-green-200 text-[11px] sm:text-xs mt-0.5 sm:mt-1">{item.sub}</p>
               </div>
             </div>
           </AnimateIn>
