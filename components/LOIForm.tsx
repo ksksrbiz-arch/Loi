@@ -17,7 +17,7 @@ const OREGON_COUNTIES = [
 
 const SERVICE_OPTIONS = [
   "Aerial Fertilizer Application",
-  "Boltrak Field Tracking",
+  "Flight Log & Coverage Reports",
   "Grass Seed Spreading",
   "Field Mapping",
   "Aerial Photography",
@@ -237,8 +237,8 @@ export default function LOIForm() {
         {/* Submit error */}
         {submitError && (
           <p className="text-red-500 text-sm text-center">
-            Something went wrong submitting your form. Please try again or call
-            us directly at (503) 000-0000.
+            Something went wrong submitting your form. Please try again or
+            email us directly.
           </p>
         )}
 

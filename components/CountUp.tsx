@@ -26,7 +26,9 @@ export default function CountUp({
   separators = true,
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const [value, setValue] = useState(0);
+  // Initialize at the target value so SSR / JS-disabled / pre-hydration users
+  // see the real number, never a placeholder zero.
+  const [value, setValue] = useState(end);
   const startedRef = useRef(false);
 
   useEffect(() => {
@@ -47,6 +49,7 @@ export default function CountUp({
       }
 
       const t0 = performance.now();
+      setValue(0);
       const tick = (now: number) => {
         const elapsed = now - t0;
         const t = Math.min(1, elapsed / duration);

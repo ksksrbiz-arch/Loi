@@ -28,7 +28,7 @@ export default function Footer() {
             no compaction, and the data to prove every pass.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            {["FAA Part 137", "RTK-GPS", "Insured", "Oregon-based"].map(
+            {["FAA Part 107", "RTK-GPS", "Oregon-based"].map(
               (b) => (
                 <span
                   key={b}
@@ -82,12 +82,6 @@ export default function Footer() {
             Contact
           </h3>
           <div className="flex flex-col gap-2 text-sm text-gray-400">
-            <a
-              href="tel:5030000000"
-              className="hover:text-white transition-colors"
-            >
-              📞 (503) 000-0000
-            </a>
             <p>📍 Portland, OR</p>
             <p className="text-xs text-gray-500 mt-2 leading-relaxed">
               Operating across the Willamette Valley, Columbia Basin, Southern
@@ -98,9 +92,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="relative border-t border-green-900/60 text-center py-5 text-xs text-gray-500">
-        © 2026 Oregon Aerial Services. All rights reserved. FAA Certified
-        Drone Operations.
+      <div className="relative border-t border-green-900/60 text-center py-5 px-6 text-xs text-gray-500 space-y-1.5">
+        <p>
+          Oregon Aerial Services is a registered assumed business name of
+          1Commerce LLC, an Oregon limited liability company.
+        </p>
+        <p>© 2026 1Commerce LLC. All rights reserved.</p>
       </div>
     </footer>
   );

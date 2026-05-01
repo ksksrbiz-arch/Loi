@@ -40,7 +40,8 @@ export default function LOIPage() {
             <div>
               <p className="font-semibold text-sm">Oregon Aerial Team</p>
               <p className="text-gray-300 text-xs">
-                FAA Part 137 — built for Oregon growers and field conditions
+                FAA Part 107 Pilot · Part 137 application pending — built for
+                Oregon growers and field conditions
               </p>
             </div>
           </div>
