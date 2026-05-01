@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title:
     "Oregon Aerial Services | Precision Drone Agriculture for Oregon Farms",
   description:
-    "Modern agricultural drones for Oregon farmers — precision spraying, aerial seeding, NDVI mapping, and flight-logged Boltrak documentation. Less drift, no compaction, no consultation fee.",
+    "Modern agricultural drones for Oregon farmers — precision spraying, aerial seeding, NDVI mapping, and full flight-log documentation. Less drift, no compaction, no consultation fee.",
   keywords:
-    "Oregon drone services, agricultural drone Oregon, drone spraying Oregon, drone seeding Oregon, NDVI mapping Oregon, precision agriculture, aerial fertilizer drone, Part 137 drone Oregon",
+    "Oregon drone services, agricultural drone Oregon, drone spraying Oregon, drone seeding Oregon, NDVI mapping Oregon, precision agriculture, aerial fertilizer drone Oregon",
   openGraph: {
     title: "Oregon Aerial Services — Precision Drone Agriculture",
     description:

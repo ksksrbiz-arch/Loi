@@ -6,8 +6,8 @@ export default function TrustBar() {
   const items = [
     {
       icon: "🛂",
-      label: "FAA Part 137 Operator",
-      sub: "Licensed for ag chemical application",
+      label: "FAA Part 107 Remote Pilot",
+      sub: "Part 137 application pending for 2026 season",
     },
     {
       icon: "🛰️",
@@ -16,7 +16,7 @@ export default function TrustBar() {
     },
     {
       icon: "🏛️",
-      label: "Oregon-Based & Insured",
+      label: "Oregon-Based",
       sub: "Local crews, local response",
     },
     {

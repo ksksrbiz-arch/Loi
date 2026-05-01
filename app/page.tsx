@@ -15,7 +15,7 @@ const services = [
     title: "Precision Drone Spraying",
     description:
       "Fertilizer, fungicide, and crop protection delivered with RTK-GPS swath spacing and ultra-low water volumes.",
-    highlight: "Most popular",
+    highlight: "Flagship service",
   },
   {
     icon: "🌾",
@@ -31,7 +31,7 @@ const services = [
   },
   {
     icon: "🛰️",
-    title: "Boltrak Flight Logs",
+    title: "Flight Logs & Coverage Reports",
     description:
       "Every flight produces a coverage map and application telemetry — clean documentation for compliance and planning.",
   },
@@ -134,7 +134,7 @@ export default function HomePage() {
               <span className="text-wheat">✓</span> No Consultation Fee
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="text-wheat">✓</span> FAA Part 137 Certified
+              <span className="text-wheat">✓</span> FAA Part 107 Pilot · Part 137 in progress
             </span>
             <span className="flex items-center gap-1.5">
               <span className="text-wheat">✓</span> RTK-GPS Precision
@@ -227,8 +227,9 @@ export default function HomePage() {
                 Full-service drone agriculture
               </h2>
               <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-                FAA Part 137 certified pilots flying agricultural-class drones
-                — purpose-built for Oregon&apos;s terrain, weather, and crops.
+                FAA Part 107 remote pilots flying agricultural-class drones —
+                purpose-built for Oregon&apos;s terrain, weather, and crops.
+                Part 137 application pending for the 2026 season.
               </p>
             </div>
           </AnimateIn>
@@ -309,8 +310,6 @@ export default function HomePage() {
         subtext="Submit a Letter of Intent — no commitment, no consultation fee. We&apos;ll come back with a real flight plan."
         buttonText="Submit Your LOI"
         buttonHref="/loi"
-        secondaryText="or call (503) 000-0000 →"
-        secondaryHref="tel:5030000000"
       />
     </>
   );

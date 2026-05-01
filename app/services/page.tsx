@@ -8,7 +8,7 @@ import ComparisonTable from "@/components/ComparisonTable";
 export const metadata: Metadata = {
   title: "Drone Services | Oregon Aerial Services",
   description:
-    "Precision drone spraying, aerial seeding, NDVI mapping, Boltrak flight logs, and aerial photography for Oregon farmers. No consultation fee.",
+    "Precision drone spraying, aerial seeding, NDVI mapping, flight log and coverage reports, and aerial photography for Oregon farmers. No consultation fee.",
 };
 
 const services = [
@@ -24,7 +24,7 @@ const services = [
       "Variable-rate prescriptions and zone-by-zone spot treatment are native — we treat the 8 acres that need attention, not the whole 80.",
     ],
     bullets: [
-      "FAA Part 137 certified for chemical application",
+      "FAA Part 107 Pilot · Part 137 application pending for 2026 season",
       "Down to 1-acre minimums (no plane ferry fees)",
       "Up to ~40 ac/hr coverage with a fast-fill workflow",
     ],
@@ -68,12 +68,12 @@ const services = [
   },
   {
     icon: "🛰️",
-    title: "Boltrak Field Tracking",
+    title: "Flight Log & Coverage Reports",
     image:
       "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Aerial view of precisely tracked crop rows",
     detail: [
-      "Boltrak rides on every flight to deliver real-time tracking and post-flight reports — coverage maps, application rates, and full GPS telemetry.",
+      "Every flight ships with real-time tracking and post-flight reports — coverage maps, application rates, and full GPS telemetry.",
       "This is the documentation insurance and compliance want, and it's also the data you'll actually use to plan next season.",
       "Pairs at no extra hardware cost with our spraying and seeding work.",
     ],

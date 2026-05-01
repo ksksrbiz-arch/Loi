@@ -57,12 +57,6 @@ export default function Navbar() {
             Why Drones
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-wheat group-hover:w-full transition-all duration-300" />
           </Link>
-          <a
-            href="tel:5030000000"
-            className="text-gray-300 text-sm hover:text-wheat transition-colors hidden lg:flex items-center gap-1.5"
-          >
-            📞 (503) 000-0000
-          </a>
           <Link
             href="/loi"
             className="bg-wheat text-darkforest px-5 py-2 rounded-lg font-bold hover:bg-yellow-400 transition-all shadow-lg hover:shadow-wheat hover:-translate-y-0.5"
@@ -127,12 +121,6 @@ export default function Navbar() {
           >
             Get a Free Quote
           </Link>
-          <a
-            href="tel:5030000000"
-            className="text-gray-300 text-sm hover:text-wheat transition-colors"
-          >
-            📞 (503) 000-0000
-          </a>
         </div>
       )}
     </nav>
